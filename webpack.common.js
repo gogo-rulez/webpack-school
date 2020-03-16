@@ -3,14 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin'); // used for loading dyna
 
 module.exports = {
 
-    mode: "development", // this output will not be minified
-    //devtool: "none", // will remove eval from output code
-
     entry: "./src/index.js",
-    output: {
-        filename: "main.[contentHash].js", //name of the outputed file, contentHash will add a hash to the filename
-        path: path.resolve(__dirname, "dist") //__dirname is current directory name, dist is the name of the output folder
-    },
 
     module: {
         rules: [
