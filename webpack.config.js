@@ -11,6 +11,13 @@ module.exports = {
         path: path.resolve(__dirname, "dist") //__dirname is current directory name, dist is the name of the output folder
     },
 
-
+    module: {
+        rules: [
+            {
+                test: /\.css$/, // files that end with .css
+                use: ["style-loader", "css-loader"] // we have to use loaders in reverse order - css-loader translate css to js, style-loader inject it into the DOM
+            }
+        ]
+    }
 
 }
