@@ -1,4 +1,5 @@
 const path = require("path");
+var HtmlWebpackPlugin = require('html-webpack-plugin'); // used for loading dynamic files (with hashes)
 
 module.exports = {
 
@@ -7,7 +8,7 @@ module.exports = {
 
     entry: "./src/index.js",
     output: {
-        filename: "main.js", //name of the outputed file
+        filename: "main.[contentHash].js", //name of the outputed file, contentHash will add a hash to the filename
         path: path.resolve(__dirname, "dist") //__dirname is current directory name, dist is the name of the output folder
     },
 
@@ -22,6 +23,10 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+
+    plugins: [new HtmlWebpackPlugin({
+        template: './src/template.html'
+    })]
 
 }
