@@ -3,7 +3,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin'); // used for loading dyna
 
 module.exports = {
 
-    entry: "./src/index.js",
+    entry: {
+        main: "./src/index.js",
+        vendor: './src/vendor.js'
+    },
 
     module: {
         rules: [

@@ -8,7 +8,7 @@ module.exports = merge(common, {
     //devtool: "none", // will remove eval from output code
 
     output: {
-        filename: "main.js", //name of the outputed file, contentHash will add a hash to the filename
+        filename: "[name].bundle.js", //name of the outputed file, [name] will be vendor or main
         path: path.resolve(__dirname, "dist") //__dirname is current directory name, dist is the name of the output folder
     },
 
